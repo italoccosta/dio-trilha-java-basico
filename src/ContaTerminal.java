@@ -1,3 +1,6 @@
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  * Este projeto tem como finalidade entregar o desafio proposto pela DIO, no
  * módulo de Java básico.
@@ -25,7 +28,31 @@
 public class ContaTerminal {
 
     public static void main(String[] args) {
-        System.out.println("Teste 1");
+
+        // Instanciando a classe Scanner
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+        // Declarando variáveis
+        String nome, agencia;
+        int conta;
+        double saldo;
+
+        // Solcitando dados do usuário
+        System.out.println("Por favor, informe o seu nome: ");
+        nome = scanner.nextLine();
+
+        System.out.println("Por favor, digite o número da agência: ");
+        agencia = scanner.next();
+
+        System.out.println("Por favor, digite o número da conta: ");
+        conta = scanner.nextInt();
+
+        System.out.println("Por favor, digite o seu saldo: ");
+        saldo = scanner.nextDouble();
+
+        System.out.println("Olá " + nome + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia
+                + ", conta " + conta + " e seu saldo de R$ " + saldo + " já está disponível para saque!");
+
     }
 
 }
